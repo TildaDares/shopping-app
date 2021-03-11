@@ -27,7 +27,7 @@ export default function Home() {
 				</li>
 				<li className="inline p-3 pr-5 md:mr-64 rounded hover:bg-gray-700 cursor-pointer">
 					<Link to="/cart">
-						<img src={cart} alt="cart" className="w-10 inline md:w-12" />
+						<img src={cart} alt="cart" className="w-9 inline md:w-12" />
 					</Link>
 				</li>
 			</nav>
