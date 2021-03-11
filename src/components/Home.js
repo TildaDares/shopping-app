@@ -1,6 +1,7 @@
 import React from "react";
 import cart from "../images/cart.svg";
 import mainImage from "../images/gilmore-collection.jpg";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 	const styles = {
@@ -19,13 +20,15 @@ export default function Home() {
 				style={{ backgroundColor: styles.filter }}
 			>
 				<li className="inline p-3 hover:bg-gray-700 md:mr-5 rounded active:text-red-600 cursor-pointer">
-					Home
+					<Link to="/">Home</Link>
 				</li>
 				<li className="inline p-3 md:mr-5 rounded hover:bg-gray-700 cursor-pointer">
-					Shop
+					<Link to="/shop">Shop</Link>
 				</li>
 				<li className="inline p-3 pr-5 md:mr-64 rounded hover:bg-gray-700 cursor-pointer">
-					<img src={cart} alt="cart" className="w-10 inline md:w-12" />
+					<Link to="/cart">
+						<img src={cart} alt="cart" className="w-10 inline md:w-12" />
+					</Link>
 				</li>
 			</nav>
 
