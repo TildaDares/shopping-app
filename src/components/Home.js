@@ -6,13 +6,17 @@ import { Link } from "react-router-dom";
 export default function Home() {
 	const styles = {
 		backgroundColor: "rgba(0, 0, 0, 0.5)",
+		background: "url(" + mainImage + ")",
 		borderLeft: "10px solid red",
 		filter: "rgba(0, 0, 0, 0.5)",
 	};
 
 	return (
 		<div
-			style={{ backgroundImage: "url(" + mainImage + ")" }}
+			style={
+				({ backgroundImage: styles.background },
+				{ backgroundColor: styles.backgroundColor })
+			}
 			className="h-screen w-full bg-no-repeat bg-cover"
 		>
 			<nav
@@ -32,10 +36,7 @@ export default function Home() {
 				</li>
 			</nav>
 
-			<div
-				className="flex justify-center items-center h-screen w-screen px-4 flex-col"
-				style={{ backgroundColor: styles.backgroundColor }}
-			>
+			<div className="flex justify-center items-center h-screen w-screen px-4 flex-col">
 				<p
 					className="text-5xl sm:text-6xl lg:text-7xl text-white break-words text-center p-3 font-mono"
 					style={{ borderLeft: styles.borderLeft }}
