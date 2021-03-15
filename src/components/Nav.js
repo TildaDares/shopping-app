@@ -16,16 +16,18 @@ export default function Nav(props) {
       style={styles}
     >
       <Link to="/shopping-app">
-        <p className="text-red-600 font-mono text-3xl font-bold">Phoenix</p>
+        <p className="text-red-600 font-mono text-lg sm:text-3xl font-bold">
+          Phoenix
+        </p>
       </Link>
       <ul>
         <Link to="/shopping-app">
-          <li className="inline p-3 md:mr-5 rounded active:text-red-600 cursor-pointer hover:bg-red-700 hover:text-white">
+          <li className="inline p-3 sm:mr-5 rounded text-lg sm:text-2xl active:text-red-600 cursor-pointer hover:bg-red-700 hover:text-white">
             Home
           </li>
         </Link>
         <Link to="/shop">
-          <li className="inline p-3 md:mr-5 rounded cursor-pointer hover:bg-red-700 hover:text-white">
+          <li className="inline p-3 sm:mr-5 rounded cursor-pointer text-lg sm:text-2xl hover:bg-red-700 hover:text-white">
             Shop
           </li>
         </Link>
@@ -35,7 +37,7 @@ export default function Nav(props) {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="w-9 inline md:w-9"
+              className="inline w-7 sm:w-9"
               stroke={props.textColor === "text-white" ? "white" : "black"}
             >
               <path
