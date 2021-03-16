@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Cart } from "./Cart.js";
 
 export default function Nav(props) {
   const styles = {
@@ -33,20 +34,7 @@ export default function Nav(props) {
         </Link>
         <Link to="/cart">
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline w-7 sm:w-9"
-              stroke={props.textColor === "text-white" ? "white" : "black"}
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
+            <Cart textColor={props.textColor} class="w-7 sm:w-9" />
           </li>
         </Link>
       </ul>

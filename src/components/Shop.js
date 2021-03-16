@@ -10,6 +10,7 @@ import pesia from "../images/pesia-crest.jpg";
 import ribCage from "../images/rib-cage.jpg";
 import silver from "../images/silver-geometric.jpg";
 import sun from "../images/sun-collection.jpg";
+import { Cart } from "./Cart.js";
 
 export default function Shop() {
   const images = [
@@ -76,6 +77,12 @@ export default function Shop() {
               alt={img.desc}
               className="h-48 w-full object-cover md:h-64"
             />
+            <p className="text-center p-4 font-mono">{img.desc}</p>
+            <p className="text-red-600 text-center pb-5">{img.price}</p>
+            <button className="p-3 bg-red-600 rounded float-right mb-4 text-white mr-3 hover:bg-red-700">
+              <Cart textColor="text-white" class="w-5 mr-3" />
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
