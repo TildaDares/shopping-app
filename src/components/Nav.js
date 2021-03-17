@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Cart } from "./Cart.js";
 
-export default function Nav() {
+export default function Nav(props) {
   const [textColor, setTextColor] = useState("text-white");
-  const [activeLink, setActiveLink] = useState("/shopping-app");
+  const [activeLink, setActiveLink] = useState(window.location.pathname);
   const styles = {
     top: "2%",
     borderBottom: textColor === "text-white" ? "" : "1px solid #cbd5e0",
@@ -66,7 +66,7 @@ export default function Nav() {
         >
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700 hover:text-white">
             <Cart class={"w-7 sm:w-9 " + isActive("/cart")} />
-            <sup>3</sup>
+            <sup>{props.cartCount}</sup>
           </li>
         </Link>
       </ul>
