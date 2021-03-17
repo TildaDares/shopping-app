@@ -3,16 +3,23 @@ import { Link } from "react-router-dom";
 import { Cart } from "./Cart.js";
 
 export default function Nav(props) {
+  const textColor = () => {
+    if (window.location.pathname === "/shopping-app") {
+      return "text-white";
+    }
+    return "text-black";
+  };
+
   const styles = {
     top: "2%",
-    borderBottom: props.textColor === "text-white" ? "" : "1px solid #cbd5e0",
+    borderBottom: textColor() === "text-white" ? "" : "1px solid #cbd5e0",
   };
 
   return (
     <nav
       className={
         "list-none text-xl md:text-2xl pt-4 flex justify-around w-full absolute pb-3 " +
-        props.textColor
+        textColor()
       }
       style={styles}
     >
@@ -34,7 +41,7 @@ export default function Nav(props) {
         </Link>
         <Link to="/cart">
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700">
-            <Cart textColor={props.textColor} class="w-7 sm:w-9" />
+            <Cart textColor={textColor()} class="w-7 sm:w-9" />
           </li>
         </Link>
       </ul>

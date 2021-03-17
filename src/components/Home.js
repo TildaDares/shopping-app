@@ -1,6 +1,5 @@
 import React from "react";
 import mainImage from "../images/gilmore-collection.jpg";
-import Nav from "./Nav";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       style={{ backgroundImage: styles.background }}
       className="h-screen w-full bg-no-repeat bg-cover flex justify-center flex-col items-center"
     >
-      <Nav textColor="text-white" />
       <div className="px-4 text-center">
         <p
           className="text-5xl sm:text-6xl lg:text-7xl text-white text-center p-3 font-mono"
