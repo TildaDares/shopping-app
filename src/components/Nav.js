@@ -64,8 +64,9 @@ export default function Nav() {
           to="/cart"
           onClick={() => handleColorChange("/cart", "text-black")}
         >
-          <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700">
+          <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700 hover:text-white">
             <Cart class={"w-7 sm:w-9 " + isActive("/cart")} />
+            <sup>3</sup>
           </li>
         </Link>
       </ul>
