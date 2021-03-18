@@ -7,25 +7,22 @@ import ShopItem from "./components/ShopItem";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
-  const [cartCount, setCartCount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
 
   const onCartCountChange = (cartItem) => {
     const findItem = cartItems.find((item) => item.id === cartItem.id);
     if (!findItem) {
-      setCartCount(cartCount + 1);
       setCartItems(cartItems.concat(cartItem));
     }
   };
 
   const removeFromCart = (cartItem) => {
-    setCartCount(cartCount - 1);
     setCartItems(cartItems.filter((item) => item.id !== cartItem.id));
   };
 
   return (
     <Router>
-      <Nav cartCount={cartCount} />
+      <Nav cartCount={cartItems.length} />
       <Switch>
         <Route exact path="/shopping-app" component={Home} />
         <Route
