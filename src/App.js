@@ -18,6 +18,11 @@ export default function App() {
     }
   };
 
+  const removeFromCart = (cartItem) => {
+    setCartCount(cartCount - 1);
+    setCartItems(cartItems.filter((item) => item.id !== cartItem.id));
+  };
+
   return (
     <Router>
       <Nav cartCount={cartCount} />
@@ -33,7 +38,13 @@ export default function App() {
         <Route
           exact
           path="/cart"
-          render={(props) => <Cart {...props} cartItems={cartItems} />}
+          render={(props) => (
+            <Cart
+              {...props}
+              cartItems={cartItems}
+              removeFromCart={removeFromCart}
+            />
+          )}
         />
         <Route
           exact
