@@ -29,7 +29,8 @@ export default function Nav(props) {
     setActiveLink(id);
   };
 
-  const isActive = (link) => (link === activeLink ? "text-red-700" : textColor);
+  const isActive = (link) =>
+    link === activeLink ? "text-yellow-400" : textColor;
 
   return (
     <nav
@@ -43,7 +44,7 @@ export default function Nav(props) {
         to="/shopping-app"
         onClick={() => handleColorChange("/shopping-app", "text-white")}
       >
-        <p className="text-red-600 font-mono text-lg sm:text-3xl font-bold">
+        <p className="text-yellow-400 font-mono text-lg sm:text-3xl font-bold">
           Phoenix
         </p>
       </Link>
@@ -54,7 +55,7 @@ export default function Nav(props) {
         >
           <li
             className={
-              "inline p-3 sm:mr-5 rounded text-lg sm:text-2xl active:text-red-600 cursor-pointer hover:bg-red-700 hover:text-white " +
+              "inline p-3 sm:mr-5 rounded text-lg sm:text-2xl cursor-pointer hover:bg-yellow-400 hover:text-white " +
               isActive("/shopping-app")
             }
           >
@@ -67,7 +68,7 @@ export default function Nav(props) {
         >
           <li
             className={
-              "inline p-3 sm:mr-5 rounded cursor-pointer text-lg sm:text-2xl hover:bg-red-700 hover:text-white " +
+              "inline p-3 sm:mr-5 rounded cursor-pointer text-lg sm:text-2xl hover:bg-yellow-400 hover:text-white " +
               isActive("/shop")
             }
           >
@@ -78,7 +79,7 @@ export default function Nav(props) {
           to="/cart"
           onClick={() => handleColorChange("/cart", "text-black")}
         >
-          <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700 hover:text-white">
+          <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-yellow-400 hover:text-white">
             <CartSVG class={"w-7 sm:w-9 " + isActive("/cart")} />
             <sup className={"hover:text-white " + isActive("/cart")}>
               {props.cartCount}

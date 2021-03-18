@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const styles = {
     background: "url(" + mainImage + ")",
-    borderLeft: "10px solid red",
+    borderLeft: "10px solid #F6E05E",
   };
 
   return (
@@ -18,7 +18,7 @@ export default function Home() {
           className="text-5xl sm:text-6xl lg:text-7xl text-white text-center p-3 font-mono"
           style={{ borderLeft: styles.borderLeft }}
         >
-          <span className="text-red-600 mr-3">Phoenix </span> Jewellery
+          <span className="text-yellow-400 mr-3">Phoenix </span> Jewellery
         </p>
         <Link to="/shop">
           <button className="text-center bg-white text-black p-3 font-serif rounded mt-6 hover:bg-gray-200 lg:text-lg">
