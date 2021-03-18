@@ -15,8 +15,9 @@ export default function ShopItem(props) {
         onCartCountChange={props.onCartCountChange}
       />
       <button
-        className="p-3 bg-yellow-400 rounded-b text-white mr-3 hover:bg-yellow-500 w-full"
+        className="p-3 bg-yellow-400 rounded-b outline-none focus:bg-yellow-500 text-white mr-3 hover:bg-yellow-500 w-full"
         onClick={() => props.onCartCountChange(ring)}
+        style={{ outline: "none" }}
       >
         <CartSVG class="w-5 mr-3 text-white" />
         Add to Cart

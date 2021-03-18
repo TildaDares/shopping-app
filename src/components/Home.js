@@ -21,7 +21,10 @@ export default function Home() {
           <span className="text-yellow-400 mr-3">Phoenix </span> Jewellery
         </p>
         <Link to="/shop">
-          <button className="text-center bg-white text-black p-3 font-serif rounded mt-6 hover:bg-gray-200 lg:text-lg">
+          <button
+            className="text-center bg-white text-black p-3 font-serif rounded mt-6 hover:bg-gray-200 lg:text-lg"
+            style={{ outline: "none" }}
+          >
             Shop Now
           </button>
         </Link>
