@@ -11,7 +11,7 @@ export default function Card(props) {
         className={"w-full object-cover" + props.height}
       />
       <p className="text-center p-4 font-mono">{ring.desc}</p>
-      <p className="text-red-600 text-center pb-5">{ring.price}</p>
+      <p className="text-red-600 text-center pb-5">${ring.price}</p>
     </div>
   );
 }
