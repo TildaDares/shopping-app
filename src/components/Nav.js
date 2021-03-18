@@ -80,7 +80,9 @@ export default function Nav(props) {
         >
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700 hover:text-white">
             <CartSVG class={"w-7 sm:w-9 " + isActive("/cart")} />
-            <sup className={isActive("/cart")}>{props.cartCount}</sup>
+            <sup className={"hover:text-white " + isActive("/cart")}>
+              {props.cartCount}
+            </sup>
           </li>
         </Link>
       </ul>
