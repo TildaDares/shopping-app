@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Cart } from "./Cart.js";
 
@@ -9,6 +9,20 @@ export default function Nav(props) {
     top: "2%",
     borderBottom: textColor === "text-white" ? "" : "1px solid #cbd5e0",
   };
+
+  useEffect(() => {
+    let color = localStorage.getItem("textColor");
+    let link = localStorage.getItem("activeLink");
+    if (link && color) {
+      setTextColor(color);
+      setActiveLink(link);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("textColor", textColor);
+    localStorage.setItem("activeLink", activeLink);
+  }, [textColor, activeLink]);
 
   const handleColorChange = (id, color) => {
     setTextColor(color);
@@ -66,7 +80,7 @@ export default function Nav(props) {
         >
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700 hover:text-white">
             <Cart class={"w-7 sm:w-9 " + isActive("/cart")} />
-            <sup>{props.cartCount}</sup>
+            <sup className={isActive("/cart")}>{props.cartCount}</sup>
           </li>
         </Link>
       </ul>
