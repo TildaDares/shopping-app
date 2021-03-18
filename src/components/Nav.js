@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Cart } from "./Cart.js";
+import { CartSVG } from "./CartSVG.js";
 
 export default function Nav(props) {
   const [textColor, setTextColor] = useState("text-white");
@@ -79,7 +79,7 @@ export default function Nav(props) {
           onClick={() => handleColorChange("/cart", "text-black")}
         >
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-red-700 hover:text-white">
-            <Cart class={"w-7 sm:w-9 " + isActive("/cart")} />
+            <CartSVG class={"w-7 sm:w-9 " + isActive("/cart")} />
             <sup className={isActive("/cart")}>{props.cartCount}</sup>
           </li>
         </Link>
