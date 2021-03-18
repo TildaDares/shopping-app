@@ -7,8 +7,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
   const [cartCount, setCartCount] = useState(0);
-  const onCartCountChange = () => {
-    setCartCount(cartCount + 1);
+  const [cartItems, setCartItems] = useState([]);
+  const onCartCountChange = (cartItem) => {
+    const findItem = cartItems.find((item) => item.id === cartItem.id);
+    if (!findItem) {
+      setCartCount(cartCount + 1);
+      setCartItems(cartItems.concat(cartItem));
+    }
   };
 
   return (
