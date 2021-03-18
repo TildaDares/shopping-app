@@ -4,11 +4,6 @@ import { Cart } from "./Cart.js";
 export default function Card(props) {
   const ring = props.ring;
 
-  const handleCart = (event) => {
-    event.stopPropagation();
-    props.onCartCountChange();
-  };
-
   return (
     <div className="overflow-hidden">
       <img
@@ -20,7 +15,7 @@ export default function Card(props) {
       <p className="text-red-600 text-center pb-5">{ring.price}</p>
       <button
         className="p-3 bg-red-600 rounded float-right mb-4 text-white mr-3 hover:bg-red-700"
-        onClick={handleCart}
+        onClick={props.onCartCountChange}
       >
         <Cart class="w-5 mr-3 text-white" />
         Add to Cart
