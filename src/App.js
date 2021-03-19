@@ -8,26 +8,32 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);
-  const findItem = (cartItem) =>
-    cartItems.find((item) => item.id === cartItem.id);
+  const findItemIndex = (cartItem) => {
+    return cartItems.findIndex((item) => item.id === cartItem.id);
+  };
 
   const onCartCountChange = (cartItem) => {
-    const item = findItem(cartItem);
-    if (!item) {
+    const index = findItemIndex(cartItem);
+    if (index < 0) {
       const copiedCartItem = cartItem;
-      copiedCartItem.quantity = 0;
+      copiedCartItem.quantity = 1;
       setCartItems(cartItems.concat(copiedCartItem));
     }
   };
 
-  const addToItemQuantity = (cartItem) => {
-    const item = findItem(cartItem);
-    item.quantity++;
-  };
-
-  const removeFromItemQuantity = (cartItem) => {
-    const item = findItem(cartItem);
-    item.quantity--;
+  const handleQuantityChange = (cartItem, itemQuantity) => {
+    if (!itemQuantity && !isNaN(itemQuantity)) {
+      removeFromCart(cartItem);
+      return;
+    }
+    const foundIndex = findItemIndex(cartItem);
+    const copiedCartItems = cartItems.map((item, index) => {
+      if (index === foundIndex) {
+        item.quantity = itemQuantity || 1;
+      }
+      return item;
+    });
+    setCartItems(copiedCartItems);
   };
 
   const removeFromCart = (cartItem) => {
@@ -54,6 +60,7 @@ export default function App() {
               {...props}
               cartItems={cartItems}
               removeFromCart={removeFromCart}
+              handleQuantityChange={handleQuantityChange}
             />
           )}
         />
