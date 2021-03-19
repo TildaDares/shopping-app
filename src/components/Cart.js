@@ -6,12 +6,28 @@ export default function Cart(props) {
     props.handleQuantityChange(ring, Number(e.target.value));
   };
 
-  return (
-    <div>
+  const getTotalPrice = () => {
+    let totalPrice = 0;
+    props.cartItems.forEach((item) => {
+      totalPrice += item.price * item.quantity;
+    });
+    return totalPrice;
+  };
+
+  const getTotalQuantity = () => {
+    let totalQuantity = 0;
+    props.cartItems.forEach((item) => {
+      totalQuantity += item.quantity;
+    });
+    return totalQuantity;
+  };
+
+  if (props.cartItems.length) {
+    return (
       <div className="max-w-screen-md mx-auto mt-24 p-5">
         {props.cartItems.map((ring) => (
           <div
-            className="w-full h-24 flex flex-row items-center cursor-pointer rounded-lg shadow h-full max-w-md mx-auto mb-5"
+            className="w-full h-24 flex flex-row items-center cursor-pointer rounded-lg shadow h-full max-w-md mx-auto mb-8"
             key={ring.id}
           >
             <Link to={`/shop/${ring.id}`} className="p-4">
@@ -53,8 +69,36 @@ export default function Cart(props) {
             </div>
           </div>
         ))}
+        <h3 className="pb-3 font-mono mt-16">Order Summary</h3>
+        <hr />
+        <table
+          className="leading-normal text-sm font-mono"
+          style={{ borderCollapse: "inherit", borderSpacing: "10px" }}
+        >
+          <tr>
+            <td>Quantity:</td>
+            <td>{getTotalQuantity()}</td>
+          </tr>
+          <tr>
+            <td>Price:</td>
+            <td>${getTotalPrice()}</td>
+          </tr>
+          <tr>
+            <td>Shipping:</td>
+            <td>$0.00</td>
+          </tr>
+          <tr className="font-bold">
+            <td>Total Cost:</td>
+            <td>${getTotalPrice()}</td>
+          </tr>
+        </table>
       </div>
-      <button></button>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="text-center h-screen flex justify-center items-center w-full font-mono">
+        <p className="text-lg font-mono">There are no items in the cart.</p>
+      </div>
+    );
+  }
 }
