@@ -8,14 +8,26 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);
+  const findItem = (cartItem) =>
+    cartItems.find((item) => item.id === cartItem.id);
 
   const onCartCountChange = (cartItem) => {
-    const findItem = cartItems.find((item) => item.id === cartItem.id);
-    if (!findItem) {
+    const item = findItem(cartItem);
+    if (!item) {
       const copiedCartItem = cartItem;
       copiedCartItem.quantity = 0;
       setCartItems(cartItems.concat(copiedCartItem));
     }
+  };
+
+  const addToItemQuantity = (cartItem) => {
+    const item = findItem(cartItem);
+    item.quantity++;
+  };
+
+  const removeFromItemQuantity = (cartItem) => {
+    const item = findItem(cartItem);
+    item.quantity--;
   };
 
   const removeFromCart = (cartItem) => {
