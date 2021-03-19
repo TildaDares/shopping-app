@@ -6,7 +6,7 @@ export default function Cart(props) {
     <div>
       <div className="max-w-screen-md mx-auto mt-24 p-5">
         {props.cartItems.map((ring) => (
-          <div>
+          <div className="w-full">
             <Link to={`/shop/${ring.id}`} key={ring.id}>
               <div className="h-24 flex flex-row items-center cursor-pointer rounded-lg shadow h-full max-w-md mx-auto mb-5">
                 <div
@@ -20,7 +20,7 @@ export default function Cart(props) {
                 </div>
               </div>
             </Link>
-            {/* <button>x</button> */}
+            <button>x</button>
           </div>
         ))}
       </div>

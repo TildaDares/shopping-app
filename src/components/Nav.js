@@ -11,15 +11,6 @@ export default function Nav(props) {
   };
 
   useEffect(() => {
-    let color = localStorage.getItem("textColor");
-    let link = localStorage.getItem("activeLink");
-    if (link && color) {
-      setTextColor(color);
-      setActiveLink(link);
-    }
-  }, []);
-
-  useEffect(() => {
     localStorage.setItem("textColor", textColor);
     localStorage.setItem("activeLink", activeLink);
   }, [textColor, activeLink]);
