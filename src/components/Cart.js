@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Cart(props) {
   return (
     <div>
-      <div className="max-w-screen-sm mx-auto mt-24 p-5">
+      <div className="max-w-screen-md mx-auto mt-24 p-5">
         {props.cartItems.map((ring) => (
           <div>
             <Link to={`/shop/${ring.id}`} key={ring.id}>

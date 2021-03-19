@@ -12,7 +12,9 @@ export default function App() {
   const onCartCountChange = (cartItem) => {
     const findItem = cartItems.find((item) => item.id === cartItem.id);
     if (!findItem) {
-      setCartItems(cartItems.concat(cartItem));
+      const copiedCartItem = cartItem;
+      copiedCartItem.quantity = 0;
+      setCartItems(cartItems.concat(copiedCartItem));
     }
   };
 
