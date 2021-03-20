@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Cart(props) {
   const [checkoutMessage, setCheckoutMessage] = useState(false);
+
   const handleChange = (e, ring) => {
     props.handleQuantityChange(ring, Number(e.target.value));
   };
