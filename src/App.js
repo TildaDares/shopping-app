@@ -21,6 +21,10 @@ export default function App() {
     }
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const handleQuantityChange = (cartItem, itemQuantity) => {
     if (!itemQuantity && !isNaN(itemQuantity)) {
       removeFromCart(cartItem);
@@ -61,6 +65,7 @@ export default function App() {
               cartItems={cartItems}
               removeFromCart={removeFromCart}
               handleQuantityChange={handleQuantityChange}
+              clearCart={clearCart}
             />
           )}
         />

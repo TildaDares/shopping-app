@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Cart(props) {
+  const [checkoutMessage, setCheckoutMessage] = useState(false);
   const handleChange = (e, ring) => {
     props.handleQuantityChange(ring, Number(e.target.value));
   };
@@ -12,6 +13,11 @@ export default function Cart(props) {
       totalPrice += item.price * item.quantity;
     });
     return totalPrice;
+  };
+
+  const handleCheckout = () => {
+    props.clearCart();
+    setCheckoutMessage(true);
   };
 
   const getTotalQuantity = () => {
@@ -92,12 +98,33 @@ export default function Cart(props) {
             <td>${getTotalPrice()}</td>
           </tr>
         </table>
+        <button
+          className="bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 p-3 text-white rounded float-right mb-5"
+          onClick={handleCheckout}
+        >
+          Checkout
+        </button>
       </div>
     );
   } else {
     return (
-      <div className="text-center h-screen flex justify-center items-center w-full font-mono">
-        <p className="text-lg font-mono">There are no items in the cart.</p>
+      <div className="flex flex-col justify-center items-center w-full h-screen">
+        {!checkoutMessage || (
+          <div className="shadow-md font-mono p-4 px-10 rounded text-center">
+            <p className="text-2xl">Your purchase was successful!</p>
+            <button
+              className="text-white bg-red-600 rounded p-2 px-3 float-right mt-3  hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-yellow-300"
+              onClick={() => setCheckoutMessage(false)}
+            >
+              Close
+            </button>
+          </div>
+        )}
+        {checkoutMessage || (
+          <div className="text-center h-screen flex justify-center items-center w-full font-mono">
+            <p className="text-lg font-mono">There are no items in the cart.</p>
+          </div>
+        )}
       </div>
     );
   }
