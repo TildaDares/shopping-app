@@ -88,7 +88,7 @@ export default function Cart(props) {
           </tr>
           <tr>
             <td>Price:</td>
-            <td>${getTotalPrice()}</td>
+            <td>${getTotalPrice().toFixed(2)}</td>
           </tr>
           <tr>
             <td>Shipping:</td>
@@ -96,7 +96,7 @@ export default function Cart(props) {
           </tr>
           <tr className="font-bold">
             <td>Total Cost:</td>
-            <td>${getTotalPrice()}</td>
+            <td>${getTotalPrice().toFixed(2)}</td>
           </tr>
         </table>
         <button
