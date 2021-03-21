@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CartSVG } from "./CartSVG.js";
 
 export default function Nav(props) {
+  const location = useLocation();
   const [textColor, setTextColor] = useState("text-white");
-  const [activeLink, setActiveLink] = useState(window.location.pathname);
+  const [activeLink, setActiveLink] = useState(location.pathname);
+
   const styles = {
     top: "2%",
-    borderBottom: textColor === "text-white" ? "" : "1px solid #cbd5e0",
+    borderBottom: activeLink === "/shopping-app" ? "" : "1px solid #cbd5e0",
   };
 
   useEffect(() => {
-    let color = localStorage.getItem("textColor");
-    let link = localStorage.getItem("activeLink");
-    if (link && color && window.location.pathname !== "/shopping-app") {
-      setTextColor(color);
-      setActiveLink(link);
+    if (location.pathname !== "/shopping-app") {
+      setTextColor("text-black");
+    } else {
+      setTextColor("text-white");
     }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("textColor", textColor);
-    localStorage.setItem("activeLink", activeLink);
-  }, [textColor, activeLink]);
+    if (["/shopping-app", "/shop", "/cart"].includes(location.pathname)) {
+      setActiveLink(location.pathname);
+    }
+  }, [location]);
 
   const handleColorChange = (id, color) => {
     setTextColor(color);
