@@ -1,7 +1,7 @@
 import React from "react";
 import rings from "./rings";
 import Card from "./Card";
-import { CartSVG } from "./CartSVG.js";
+import { CartSVG } from "./CartSVG";
 
 export default function ShopItem(props) {
   const allRings = rings();

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CartSVG } from "./CartSVG.js";
+import { CartSVG } from "./CartSVG";
 
 export default function Nav(props) {
   const location = useLocation();
@@ -18,15 +18,8 @@ export default function Nav(props) {
     } else {
       setTextColor("text-white");
     }
-    if (["/shopping-app", "/shop", "/cart"].includes(location.pathname)) {
-      setActiveLink(location.pathname);
-    }
+    setActiveLink(location.pathname);
   }, [location]);
-
-  const handleColorChange = (id, color) => {
-    setTextColor(color);
-    setActiveLink(id);
-  };
 
   const isActive = (link) =>
     link === activeLink ? "text-yellow-400" : textColor;
@@ -39,19 +32,13 @@ export default function Nav(props) {
       }
       style={styles}
     >
-      <Link
-        to="/shopping-app"
-        onClick={() => handleColorChange("/shopping-app", "text-white")}
-      >
+      <Link to="/shopping-app">
         <p className="text-yellow-400 font-mono text-lg sm:text-3xl font-bold">
           Phoenix
         </p>
       </Link>
       <ul>
-        <Link
-          to="/shopping-app"
-          onClick={() => handleColorChange("/shopping-app", "text-white")}
-        >
+        <Link to="/shopping-app">
           <li
             className={
               "inline p-3 sm:mr-5 rounded text-lg sm:text-2xl cursor-pointer hover:bg-yellow-400 hover:text-white " +
@@ -61,10 +48,7 @@ export default function Nav(props) {
             Home
           </li>
         </Link>
-        <Link
-          to="/shop"
-          onClick={() => handleColorChange("/shop", "text-black")}
-        >
+        <Link to="/shop">
           <li
             className={
               "inline p-3 sm:mr-5 rounded cursor-pointer text-lg sm:text-2xl hover:bg-yellow-400 hover:text-white " +
@@ -74,10 +58,7 @@ export default function Nav(props) {
             Shop
           </li>
         </Link>
-        <Link
-          to="/cart"
-          onClick={() => handleColorChange("/cart", "text-black")}
-        >
+        <Link to="/cart">
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-yellow-400 hover:text-white">
             <CartSVG class={"w-7 sm:w-9 " + isActive("/cart")} />
             <sup className={"hover:text-white " + isActive("/cart")}>
