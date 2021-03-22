@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/shopping-app/static/css/main.8cb73d09.chunk.css",
+    "main.js": "/shopping-app/static/js/main.25aa456e.chunk.js",
+    "main.js.map": "/shopping-app/static/js/main.25aa456e.chunk.js.map",
+    "runtime-main.js": "/shopping-app/static/js/runtime-main.d597def3.js",
+    "runtime-main.js.map": "/shopping-app/static/js/runtime-main.d597def3.js.map",
+    "static/js/2.c79945e4.chunk.js": "/shopping-app/static/js/2.c79945e4.chunk.js",
+    "static/js/2.c79945e4.chunk.js.map": "/shopping-app/static/js/2.c79945e4.chunk.js.map",
+    "index.html": "/shopping-app/index.html",
+    "static/css/main.8cb73d09.chunk.css.map": "/shopping-app/static/css/main.8cb73d09.chunk.css.map",
+    "static/js/2.c79945e4.chunk.js.LICENSE.txt": "/shopping-app/static/js/2.c79945e4.chunk.js.LICENSE.txt",
+    "static/media/elizabeth-set.8bfd2e20.jpeg": "/shopping-app/static/media/elizabeth-set.8bfd2e20.jpeg",
+    "static/media/forever-more-collection.cea5baaf.jpg": "/shopping-app/static/media/forever-more-collection.cea5baaf.jpg",
+    "static/media/gilmore-collection.e922047e.jpg": "/shopping-app/static/media/gilmore-collection.e922047e.jpg",
+    "static/media/gold-woven.0fa0743e.jpg": "/shopping-app/static/media/gold-woven.0fa0743e.jpg",
+    "static/media/hazel-green-collection.57cbe4fc.jpg": "/shopping-app/static/media/hazel-green-collection.57cbe4fc.jpg",
+    "static/media/jasmine-set.23f4ffa4.jpg": "/shopping-app/static/media/jasmine-set.23f4ffa4.jpg",
+    "static/media/minimalist.b9310d2f.jpg": "/shopping-app/static/media/minimalist.b9310d2f.jpg",
+    "static/media/pesia-crest.271bd572.jpeg": "/shopping-app/static/media/pesia-crest.271bd572.jpeg",
+    "static/media/rib-cage.a6becfc9.jpg": "/shopping-app/static/media/rib-cage.a6becfc9.jpg",
+    "static/media/silver-geometric.84dec272.jpg": "/shopping-app/static/media/silver-geometric.84dec272.jpg",
+    "static/media/sun-collection.4ed2c059.jpg": "/shopping-app/static/media/sun-collection.4ed2c059.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d597def3.js",
+    "static/js/2.c79945e4.chunk.js",
+    "static/css/main.8cb73d09.chunk.css",
+    "static/js/main.25aa456e.chunk.js"
+  ]
+}
