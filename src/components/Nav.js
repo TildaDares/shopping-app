@@ -9,11 +9,11 @@ export default function Nav(props) {
 
   const styles = {
     top: "2%",
-    borderBottom: activeLink === "/shopping-app" ? "" : "1px solid #cbd5e0",
+    borderBottom: activeLink === "/shopping-app/" ? "" : "1px solid #cbd5e0",
   };
 
   useEffect(() => {
-    if (location.pathname !== "/shopping-app") {
+    if (location.pathname !== "/shopping-app/") {
       setTextColor("text-black");
     } else {
       setTextColor("text-white");
@@ -32,17 +32,17 @@ export default function Nav(props) {
       }
       style={styles}
     >
-      <Link to="/shopping-app">
+      <Link to="/shopping-app/">
         <p className="text-yellow-400 font-mono text-lg sm:text-3xl font-bold">
           Phoenix
         </p>
       </Link>
       <ul>
-        <Link to="/shopping-app">
+        <Link to="/shopping-app/">
           <li
             className={
               "inline p-3 sm:mr-5 rounded text-lg sm:text-2xl cursor-pointer hover:bg-yellow-400 hover:text-white " +
-              isActive("/shopping-app")
+              isActive("/shopping-app/")
             }
           >
             Home

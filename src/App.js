@@ -48,7 +48,7 @@ export default function App() {
     <Router>
       <Nav cartCount={cartItems.length} />
       <Switch>
-        <Route exact path="/shopping-app" component={Home} />
+        <Route exact path="/shopping-app/" component={Home} />
         <Route
           exact
           path="/shop"
