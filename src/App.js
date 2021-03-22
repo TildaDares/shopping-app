@@ -51,14 +51,14 @@ export default function App() {
         <Route exact path="/shopping-app/" component={Home} />
         <Route
           exact
-          path="/shop"
+          path="/shopping-app/shop"
           render={(props) => (
             <Shop {...props} onCartCountChange={onCartCountChange} />
           )}
         />
         <Route
           exact
-          path="/cart"
+          path="/shopping-app/cart"
           render={(props) => (
             <Cart
               {...props}
@@ -71,7 +71,7 @@ export default function App() {
         />
         <Route
           exact
-          path="/shop/:id"
+          path="/shopping-app/shop/:id"
           render={(props) => (
             <ShopItem {...props} onCartCountChange={onCartCountChange} />
           )}

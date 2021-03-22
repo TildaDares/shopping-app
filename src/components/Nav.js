@@ -48,20 +48,22 @@ export default function Nav(props) {
             Home
           </li>
         </Link>
-        <Link to="/shop">
+        <Link to="/shopping-app/shop">
           <li
             className={
               "inline p-3 sm:mr-5 rounded cursor-pointer text-lg sm:text-2xl hover:bg-yellow-400 hover:text-white " +
-              isActive("/shop")
+              isActive("/shopping-app/shop")
             }
           >
             Shop
           </li>
         </Link>
-        <Link to="/cart">
+        <Link to="/shopping-app/cart">
           <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-yellow-400 hover:text-white">
-            <CartSVG class={"w-7 sm:w-9 " + isActive("/cart")} />
-            <sup className={"hover:text-white " + isActive("/cart")}>
+            <CartSVG class={"w-7 sm:w-9 " + isActive("/shopping-app/cart")} />
+            <sup
+              className={"hover:text-white " + isActive("/shopping-app/cart")}
+            >
               {props.cartCount}
             </sup>
           </li>
