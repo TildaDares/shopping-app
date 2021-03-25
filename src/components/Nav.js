@@ -38,36 +38,32 @@ export default function Nav(props) {
         </p>
       </Link>
       <ul>
-        <Link to="/shopping-app/">
-          <li
-            className={
-              "inline p-3 sm:mr-5 rounded text-lg sm:text-2xl cursor-pointer hover:bg-yellow-400 hover:text-white " +
-              isActive("/shopping-app/")
-            }
-          >
-            Home
-          </li>
-        </Link>
-        <Link to="/shopping-app/shop">
-          <li
-            className={
-              "inline p-3 sm:mr-5 rounded cursor-pointer text-lg sm:text-2xl hover:bg-yellow-400 hover:text-white " +
-              isActive("/shopping-app/shop")
-            }
-          >
-            Shop
-          </li>
-        </Link>
-        <Link to="/shopping-app/cart">
-          <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-yellow-400 hover:text-white">
+        <li
+          className={
+            "inline p-3 sm:mr-5 rounded text-lg sm:text-2xl cursor-pointer hover:bg-yellow-400 hover:text-white " +
+            isActive("/shopping-app/")
+          }
+        >
+          <Link to="/shopping-app/">Home</Link>
+        </li>
+        <li
+          className={
+            "inline p-3 sm:mr-5 rounded cursor-pointer text-lg sm:text-2xl hover:bg-yellow-400 hover:text-white " +
+            isActive("/shopping-app/shop")
+          }
+        >
+          <Link to="/shopping-app/shop">Shop</Link>
+        </li>
+        <li className="inline p-3 pr-5 rounded cursor-pointer hover:bg-yellow-400 hover:text-white">
+          <Link to="/shopping-app/cart">
             <CartSVG class={"w-7 sm:w-9 " + isActive("/shopping-app/cart")} />
             <sup
               className={"hover:text-white " + isActive("/shopping-app/cart")}
             >
               {props.cartCount}
             </sup>
-          </li>
-        </Link>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
